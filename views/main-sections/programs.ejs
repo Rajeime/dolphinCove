@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('../partials/head') %>
+<body>
+    <p class="about-program">The Dolphin Cove Jamaica Entrance Fee is included with all dolphin and shark interactive programs. Whether you are achieving your dream of being a dolphin trainer at Dolphin Ocho Rios Jamaica or swimming with dolphins at Dolphin Cove Montego Bay you will have the Experience of a Lifetime!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur impedit adipisci aspernatur pariatur, neque dolore non expedita illo? Sunt itaque neque reiciendis nemo rem soluta optio laborum aut corporis?
+    </p>
+    <div class="program-container">
+
+    <% programs.forEach((program)=>{%>
+
+        <div class="each-program" style="background-image:url(<%=program.image%>)">
+            <p class="program-name"> <%=program.programs%></p>
+            <p class="program-price"> $ <%=program.price%> USD</p>
+        </div>
+    <%})%>
+
+    </div>
+    
+    <div class="reservation">
+        <form action="" method="post">
+            <h4>Make Reservation</h4>
+            
+        </form>
+    </div>
+</body>
+
+</html>

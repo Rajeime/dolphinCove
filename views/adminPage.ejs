@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/head') %>
+<body>
+    <div class="admin-sidebar">
+        <a href="#"><img src="../images/logo.png" alt="" style="width:100%"></a>
+        <a href="bookings" data-option class="">Bookings</a>
+        <a href="createBookings" data-option class="">Create Bookings</a>
+        <a href="addTour" data-option class="">Tour-Guide</a>
+      </div>
+
+ <div class="admin-main">
+
+        <div class="admin-main-head">
+                <h2 class="admin-main-person">Admin</h2>
+               <button class="logout"><a href="/auth/logout">Log Out</a></button>
+        </div>
+
+        <div class="admin-main-section" data-main-section>
+            <div class="addTourGuide">
+                <form action="auth/addTourGuide" method="post">
+                    <input type="text" name="user_id" value="1" class="tourGuideUser">
+                    <input type="text" name="name" placeholder="name">
+                    <input type="text" name="email" placeholder="email">
+                    <input type="text" name="password" placeholder="password">
+                    <input type="text" name="address" id="" placeholder="address">
+                    <input type="text" name="telephone" id="" placeholder="telephone">
+                    <button>submit</button>
+                </form>
+            </div>
+        </div>
+ </div>
+</body>
+</html>

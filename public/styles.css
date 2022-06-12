@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* main navigation design */
+.main-nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: .2rem;
+}
+
+.main-nav-ul{
+    display: flex;
+    list-style: none;
+}
+
+.main-nav .active{
+    background-image: rgb(22, 46, 108);
+    background-position: 100% 100%; 
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+}
+
+.main-nav-ul a{
+    color: rgb(22, 46, 108);
+    font-family: sans-serif;
+    padding-bottom: .2rem;
+    letter-spacing: 1px;
+    margin: .8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(rgb(22, 46, 108), rgb(22, 46, 108));
+    background-position: 0 100%; 
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;    
+}
+
+
+.main-nav a:not(.active):hover{
+    background-position: 100% 100%;
+    background-size: 100% 2px;
+   
+}
+
+.main-nav .hamburger-menu{
+    color: rgb(22, 46, 108);
+    cursor: pointer;
+    display: none;
+    font-size: 1.6rem;
+}
+
+.main-section > div{
+    display: none;
+}
+
+.main-section .visible{
+    display: block;
+}
+
+
+
+/* login form design */
+.outer-login-container{
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* heading on login form */
+.heading-div{
+    text-align: center;
+}
+
+.heading{
+    color: #202124;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 20px;
+}
+
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 6px;
+    padding: 2.8rem 2.4rem;
+    margin: 1.8em;
+    
+}
+
+.login-form{
+    min-width: 350px;
+
+}
+
+input[type="text"],[type="password"]{
+    border-radius: 4px;
+    color: #202124; 
+    border: 1px solid rgb(218, 218, 218);
+    padding: 10px 8px;
+    width: 100%;
+}
+
+/* input field designs */
+.input-field{
+    position: relative;
+    margin: 16px 0;
+}
+
+.input-field label{
+   position: absolute;
+   left: 0;
+   padding: 10px;
+   font-size: 14px;
+   font-weight: 400;
+   font-family: Helvetica,Arial,sans-serif;
+   color: rgb(116, 115, 115);
+   pointer-events: none;
+}
+
+.input-field input:focus ~ label, input:valid ~ label{
+    color:#1a73e8;
+    font-size: 10px;
+    transition: .2s;
+    top: -10px;
+    background-color: transparent;
+    background-color: white;
+    font-weight:500;
+    padding: 2px;
+    left: 4px;
+}
+
+/* button */
+.signIn-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.signIn-sec button{
+    color: #fff;
+    background-color: rgb(22, 46, 108);
+    border: none;
+    padding: .5rem 1.5rem;
+    border-radius: 2px;
+    transition: box-shadow 0.6s;
+    letter-spacing: .1rem;
+    line-height: 20px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.signIn-sec button:hover{
+    background-color: rgb(19, 39, 91);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input-field .eye{
+    position: absolute;
+    padding: 10px;
+    right: 10px;
+    cursor: pointer;
+    top: 0;
+}
+
+/* design for sidenav and main section */
+/* welcome page design */
+.admin-sidebar{
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(171, 169, 169);
+    overflow-x: hidden;
+    padding-top: 16px;
+    
+  } 
+  
+.admin-sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    margin: 10px 0;
+  }
+  
+.admin-sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+.admin-main {
+    margin-left: 180px; /* Same as the width of the sidenav */
+     /* padding: 0px 10px; */
+     font-family: "Google Sans",Roboto,Arial,sans-serif;
+     background-color: rgb(245, 245, 245);
+  } 
+
+.admin-main-head{
+    display: flex;
+    justify-content: space-between;
+    /* margin: 8px ; */
+    border-bottom: 1px solid rgb(218, 218, 218);
+    align-items: center;
+    padding: 14px 20px;
+    background-color: white;
+}
+
+.admin-main-head .admin-main-person{
+    text-transform: uppercase;
+    color: rgb(22, 46, 108);
+    font-weight: 100;
+}
+
+.admin-main-head .logout{
+    background-color: rgb(50, 54, 69);
+    border: none;
+    padding: .6rem .8rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-main-head .logout:hover{
+    background-color: rgb(42, 46, 58);
+}
+
+.admin-main-head .logout a{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.admin-main h2{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.admin-main .admin-main-section{
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    position: relative;
+    height: calc(100vh - 100px);
+}
+
+/* programs page design */
+
+.program-container {
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(auto-fill , minmax(400px, 1fr));
+    padding: 10px;
+    gap: 10px;
+    margin: 0 10px;
+
+  }
+
+.about-program{
+   /* margin: 30px; */
+   font-family: sans-serif;
+   color: rgba(128, 127, 127, 0.8);
+   padding: 20px;
+}
+
+.each-program{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 2px;
+    position: relative;
+    height: 240px;
+    font-family: sans-serif;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.each-program:hover{
+    background-color: rgb(214, 215, 214);
+    background-blend-mode: multiply;
+}
+
+
+.each-program .program-price{
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background-color: rgb(22, 46, 108);
+    left: 0;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    padding: 10px 20px;
+}
+
+.each-program .program-name{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    color: white;
+    /* color: rgb(0, 158, 255); */
+    background-color: rgb(0, 158, 255);
+    text-align: center;
+    font-family: sans-serif;
+    /* font-weight: 400; */
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    padding: 10px 40px;
+    top: 0;
+}
+  
+
+
+.tourGuideUser{
+    display: none;
+}
+
+
+
+
+/* media queries */
+/* meadia query for hamburger menus */
+@media only screen and (max-width: 650px) {
+    .main-nav-ul{
+        display: none;
+        flex-direction: column;
+    }
+
+    .main-nav .hamburger-menu{
+        display: block;
+        
+    }
+    .main-nav li a{
+        display: block;
+    }
+
+    
+.login-form{
+    min-width: 300px;
+
+}
+  }
+
+/* media query at 400px */
+  @media only screen and (max-width: 400px) {
+   
+.login-form{
+    min-width: 200px;
+
+}
+  }

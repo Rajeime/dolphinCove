@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%-include('../partials/head') %>
-<body>
-    <div class="outer-login-container">
+<div class="outer-login-container">
 
-        <div class="login-container">
-            
-            <form action="auth/login" method="post" class="login-form">
+    <div class="login-container">
+        <form action="auth/login" method="post" class="login-form">
 
-                <div class="heading-div">
-                    <span class="heading">Login</span>
-                </div>
+            <div class="heading-div">
+                <span class="heading">Login</span>
+            </div>
                                 
-                <div class="input-field">
-                        <input type="text" name="email" id="" class="input" required>
-                        <label for="email">Your ID</label>
-                </div>
+            <div class="input-field">
+                <input type="text" name="email" id="" class="input" required>
+                <label for="email">Your ID</label>
+            </div>
         
-                <div class="input-field">
-                        <input type="password" name="password" id="" data-login-password class="input" required >
-                        <label for="password">Password</label>
-                        <i class="fa fa-eye eye" aria-hidden="true" data-see-password></i>
-                </div>
+            <div class="input-field">
+                <input type="password" name="password" id="" data-login-password class="input" required >
+                <label for="password">Password</label>
+                <i class="fa fa-eye eye" aria-hidden="true" data-see-password></i>
+            </div>
                 
-                <div class="signIn-sec">
-                    <button type="submit">Login</button>
-                </div>                  
-            </form>
-        </div>
+            <div class="signIn-sec">
+                <button type="submit">Login</button>
+            </div>                  
+        </form>
     </div>
-</body>
-<script src="../login.js"></script>
-</html>
+</div>

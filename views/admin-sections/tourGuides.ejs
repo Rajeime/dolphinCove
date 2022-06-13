@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%-include('../partials/head') %>
-<body>
-    <table class=" table">
-        <thead class="table-head">
+
+<table class=" table">
+    <thead class="table-head">
         <tr class="row">
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -11,17 +8,20 @@
             <th scope="col">Address</th>
             <th scope="col">Mode of Action</th>
         </tr>
-        </thead>
+    </thead>
     
-            <tr tr class="row">            
-              
+       <% tourGuides.forEach((tourGuide)=>{%>
+        <tr tr class="row">  
+                  
+            <td><%= tourGuide.name %></td>
+            <td><%= tourGuide.email %></td>
+            <td><%= tourGuide.telephone %></td>
+            <td><%= tourGuide.address %></td>
         
-                <td>
-                    <a href="edit/>" class="edit">update</a>
-                    <a href="delete/>" class="delete">remove</a>
-                </td>
-            </tr>
-        
-    </table>
-</body>
-</html>
+            <td>
+                    <a href="edit/<%= tourGuide.id %>" class="edit">update</a>
+                    <a href="delete/<%= tourGuide.id %>" class="delete">remove</a>
+            </td>
+        </tr>
+        <% })%>
+</table>

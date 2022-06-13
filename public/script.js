@@ -34,9 +34,6 @@ let hamburgerMenu = document.querySelector('[ data-hamburger]');
 let nav = document.querySelector('[data-nav]');
 
 hamburgerMenu.addEventListener('click',()=>{
-    if (nav.style.display === "block") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "block";}
+    nav.classList.toggle('activate')
 })
 

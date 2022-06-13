@@ -35,9 +35,9 @@ app.set('views', path.join(__dirname, '/views'));
 app.use('/',homeRoute);
 app.use('/auth', auth);
 
-app.get('/admin',(req,res)=>{
-    res.render('adminPage')
-})
+// app.get('/admin',(req,res)=>{
+//     res.render('adminPage')
+// })
 
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)

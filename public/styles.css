@@ -13,7 +13,7 @@
     margin-top: .2rem;
 }
 
-.main-nav-ul{
+.main-nav .main-nav-ul{
     display: flex;
     list-style: none;
 }
@@ -46,7 +46,6 @@
 .main-nav a:not(.active):hover{
     background-position: 100% 100%;
     background-size: 100% 2px;
-   
 }
 
 .main-nav .hamburger-menu{
@@ -342,13 +341,112 @@ input[type="text"],[type="password"]{
 
 
 
+/* table */
+.admin-main-section .table{
+    display: table; 
+    color: #6B7280; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    text-align: left; 
+    width: 100%; 
+}
+
+.admin-main-section .table-head{
+    background-color: #F9FAFB; 
+    color: #374151; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    text-transform: uppercase; 
+}
+
+.admin-main-section .table th{
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+}
+
+.admin-main-section .table .row{
+    background-color: #ffffff; 
+    border-bottom-width: 1px; 
+}
+
+.admin-main-section .table td{
+    padding-top: 1rem 1.5rem;
+}
+
+.admin-main-section .table a{
+    text-decoration: none; 
+    user-select: none;  
+    color: #ffffff;
+    display: inline-block; 
+    padding: 0.25rem 0.75rem;
+    font-weight: 400; 
+    line-height: 1.5; 
+    text-align: center; 
+    border-radius: 0.25rem; 
+    border-width: 1px; 
+    vertical-align: middle;
+}
+
+.admin-main-section .table .edit{
+    background-color: #10B981; 
+   
+}
+
+.admin-main-section .table .edit:hover{
+    background-color: #0fa976; 
+   
+}
+
+.admin-main-section .table .delete{
+    background-color: #DC2626; 
+}
+
+.admin-main-section .table .delete:hover{
+    background-color: #cb2525; 
+}
+
+.admin-main-section .table td {
+     vertical-align: middle;
+     text-align: center;
+  
+}
+
+
+
+
+
 /* media queries */
 /* meadia query for hamburger menus */
 @media only screen and (max-width: 650px) {
-    .main-nav-ul{
-        display: none;
+.main-nav .main-nav-ul{
+        position: fixed;
+        /* left: -100%; */
+        top: 5rem;
         flex-direction: column;
+        background-color: rgba(15, 15, 15, 0.767);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+        height: 100%;
     }
+
+/* .main-nav .active{
+    background: none;
+    background-color: blue;
+}
+
+.main-nav ul li a:hover{
+    background: none;
+    background-color: blue;
+} */
+
+
+
+.main-nav .activate {
+    display: none;
+}
 
     .main-nav .hamburger-menu{
         display: block;

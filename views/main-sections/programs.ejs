@@ -1,7 +1,17 @@
 
-<p class="about-program">The Dolphin Cove Jamaica Entrance Fee is included with all dolphin and shark interactive programs. Whether you are achieving your dream of being a dolphin trainer at Dolphin Ocho Rios Jamaica or swimming with dolphins at Dolphin Cove Montego Bay you will have the Experience of a Lifetime!
+<!-- <p class="about-program">The Dolphin Cove Jamaica Entrance Fee is included with all dolphin and shark interactive programs. Whether you are achieving your dream of being a dolphin trainer at Dolphin Ocho Rios Jamaica or swimming with dolphins at Dolphin Cove Montego Bay you will have the Experience of a Lifetime!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur impedit adipisci aspernatur pariatur, neque dolore non expedita illo? Sunt itaque neque reiciendis nemo rem soluta optio laborum aut corporis?
-</p>
+</p> -->
+
+<div class="programBanner">
+    <div>
+        <h2>Programs</h2>
+    </div>
+
+    <button class="program-button" data-bookings-button>Book Now</button>
+    
+</div>
+
 <div class="program-container">
 
     <% programs.forEach((program)=>{%>
@@ -9,13 +19,56 @@
         <div class="each-program" style="background-image:url(<%=program.image%>)">
             <p class="program-name"> <%=program.programs%></p>
             <p class="program-price"> $ <%=program.price%> USD</p>
+            
         </div>
     <%})%>
 
 </div>
     
-<div class="reservation">
-    <form action="" method="post">
+<!-- reservation form -->
+<div class="bookingsModal" data-modal>
+
+    <div class="reservation" data-reservation>
+        <span class="close" data-close>&times;</span>
+        <form action="/booking " method="post">
             <h4>Make Reservation</h4>
-    </form>
+
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName">
+            </div>
+
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName">
+            </div>
+
+            <!-- <div class="input-field"> -->
+                
+                <label for="activity">Choose the activity</label>
+                <% programs.forEach((program)=>{%>
+                    <div data-activities>
+                        <input type="radio" id="" name="booking-programs" value="<%=program.programs%>">
+                        <label for="booking-programs"><%=program.programs%></label>
+                    </div>
+                <%})%>
+            <!-- </div> -->
+
+            <div>
+                <label for="date">Date</label>
+                <input type="date" name="" id="">
+            </div>
+
+            <!-- <div>
+                <label for="date">Schedule</label>
+                <input type="date" name="" id="">
+            </div> -->
+
+            <div>
+                <label for="participants">Participants</label>
+                <input type="number" name="participants" id="" value="1" data-participants >
+            </div>
+            <button type="submit" data-book-button>Book Now</button>
+        </form>
+    </div>
 </div>

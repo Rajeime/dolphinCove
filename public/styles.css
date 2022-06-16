@@ -64,6 +64,14 @@
 }
 
 
+/* home page design */
+.main-section .home .banner{
+    width: 100vw;
+}
+
+.main-section .home .banner img{
+    width: 100%;
+}
 
 /* login form design */
 .outer-login-container{
@@ -103,7 +111,7 @@
 
 }
 
-input[type="text"],[type="password"]{
+.login-container input[type="text"],[type="password"]{
     border-radius: 4px;
     color: #202124; 
     border: 1px solid rgb(218, 218, 218);
@@ -112,12 +120,12 @@ input[type="text"],[type="password"]{
 }
 
 /* input field designs */
-.input-field{
+.login-container .input-field{
     position: relative;
     margin: 16px 0;
 }
 
-.input-field label{
+.login-container .input-field label{
    position: absolute;
    left: 0;
    padding: 10px;
@@ -128,7 +136,7 @@ input[type="text"],[type="password"]{
    pointer-events: none;
 }
 
-.input-field input:focus ~ label, input:valid ~ label{
+.login-container .input-field input:focus ~ label, .login-container .input-field input:valid ~ label{
     color:#1a73e8;
     font-size: 10px;
     transition: .2s;
@@ -141,14 +149,15 @@ input[type="text"],[type="password"]{
 }
 
 /* button */
-.signIn-sec{
+ .login-container .signIn-sec{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    
 }
 
-.signIn-sec button{
+.login-container .signIn-sec button{
     color: #fff;
     background-color: rgb(22, 46, 108);
     border: none;
@@ -157,17 +166,18 @@ input[type="text"],[type="password"]{
     transition: box-shadow 0.6s;
     letter-spacing: .1rem;
     line-height: 20px;
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
     text-transform: uppercase;
+    flex-basis: 48%
 }
 
-.signIn-sec button:hover{
+.login-container .signIn-sec button:hover{
     background-color: rgb(19, 39, 91);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.input-field .eye{
+.login-container .input-field .eye{
     position: absolute;
     padding: 10px;
     right: 10px;
@@ -271,11 +281,79 @@ input[type="text"],[type="password"]{
 
   }
 
+.programBanner{
+    background-color: #0fa976;
+    background-size: cover;
+    background-image: url('./images/dol.jpg');
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+    background-blend-mode: multiply;
+    background-color: rgba(73, 96, 93, 0.732);
+}
+
+
+.programBanner div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.programBanner h2{
+    text-transform: uppercase;
+    color: white;
+    font-family: "Marcellus", serif;
+    letter-spacing: 2px;
+}
+
+
+.programBanner h2::before{
+    content: "";
+    height: 1px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 106%;
+  }
+
+.programBanner h2::after{
+    content: "";
+    height: 1px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 106%;
+  }
+
+  .programBanner .program-button{
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .6rem .8rem;
+    cursor: pointer;
+    background-color: rgb(22, 46, 108);
+    color: white;
+    border: 2px solid white;  
+    text-transform: uppercase;  
+  }
+
+  .programBanner .program-button:hover{
+    background-color: rgb(18, 37, 87) ;
+  }
+
+
 .about-program{
    /* margin: 30px; */
    font-family: sans-serif;
    color: rgba(128, 127, 127, 0.8);
    padding: 20px;
+   /* background-color: rgb(253, 193, 81); */
 }
 
 .each-program{
@@ -331,8 +409,51 @@ input[type="text"],[type="password"]{
     padding: 10px 40px;
     top: 0;
 }
-  
 
+.each-program .program-button{
+    background-color: white;
+    border: none;
+    padding: .2rem .4rem;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+
+.main-section .bookingsModal{
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.765); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.main-section .reservation {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+ .main-section .reservation .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .main-section .reservation .close:hover{
+    color: black;
+  }
 
 .tourGuideUser{
     display: none;
@@ -410,6 +531,9 @@ input[type="text"],[type="password"]{
      text-align: center;
   
 }
+
+/* reservation code */
+
 
 
 

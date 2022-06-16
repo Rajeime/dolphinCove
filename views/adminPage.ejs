@@ -18,19 +18,18 @@
 
         <div class="admin-main-section" data-main-section>
             <div class="addTourGuide">
-                <form action="auth/addTourGuide" method="post">
+                <form action="/addTourGuide" method="post">
                     <input type="text" name="user_id" value="1" class="tourGuideUser">
                     <input type="text" name="name" placeholder="name">
                     <input type="text" name="email" placeholder="email">
                     <input type="text" name="password" placeholder="password">
+                    <input type="text" name="confirmPassword" placeholder="confirm Password">
                     <input type="text" name="address" id="" placeholder="address">
                     <input type="text" name="telephone" id="" placeholder="telephone">
-                    <button>submit</button>
+                    <button type="submit">submit</button>
                 </form>
             </div>
-            <%-include('./admin-sections/tourGuides') %>
-
-            
+            <%-include('./admin-sections/tourGuides')%>
         </div>
  </div>
 </body>

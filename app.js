@@ -6,10 +6,19 @@ const session = require('express-session');
 const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const db = require('./database/db');
+
 //route variables
 const homeRoute = require('./routes/homeRoute');
-const auth = require('./routes/auth')
-const signUp = require('./routes/signup')
+const auth = require('./routes/auth');
+const signUp = require('./routes/signup');
+const bookingsPage = require('./routes/bookings');
+
+//creating server for socket.io to grab information from client to server
+const http = require('http');
+const server = http.createServer(app);
+const socket = require('socket.io')
+const io = socket(server);
+let info;
 
 //set static files
 app.use(express.static(publicDirectory))
@@ -36,12 +45,16 @@ app.set('views', path.join(__dirname, '/views'));
 app.use('/',homeRoute);
 app.use('/auth', auth);
 app.use('/addTourGuide',signUp);
-
-// app.get('/admin',(req,res)=>{
-//     res.render('adminPage')
-// })
+app.use('/bookings',bookingsPage);
 
 
-app.listen(PORT, ()=>{
+//socket.io
+io.on('connection', (socket)=>{
+    socket.on('bookingsInfo',(info)=>{
+       socket.emit('bookingsInfo' , info)
+    })
+})
+
+server.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)
 })

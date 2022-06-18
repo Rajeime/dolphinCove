@@ -1,3 +1,4 @@
+//javascript code for navigation system
 let dataLinks = Array.from(document.querySelectorAll('[data-links]'));
 let options = Array.from(document.querySelectorAll('[data-option-select]'));
 
@@ -89,4 +90,70 @@ participants.addEventListener('change',(e)=>{
     if(e.target.value < 1){
         e.target.value = 1
     }
+})
+
+
+//socket.io codes
+let socket = io()
+
+let bookingsForm = document.querySelector('[data-booking-form]');
+let reservationBookingsForm = document.querySelector('[data-reservation-bookings-form]');
+let goBack = document.querySelector('[data-go-back]');
+let programItem = document.querySelectorAll('[data-program-item]');
+let dataReviewForm = document.querySelector('[data-review-form]'); 
+let dataCheckoutReview = document.querySelector('[data-checkout-review]')
+
+bookingsForm.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    
+    console.log(document.querySelector('[data-program]').value)
+
+    let info = [
+        {first_name :document.querySelector('[data-first_name]').value, 
+        last_name : document.querySelector('[data-last_name]').value,
+        email : document.querySelector('[data-email]').value,
+        program : document.querySelector('[data-program]').value,
+        date : document.querySelector('[data-date]').value,
+        participants : document.querySelector('[data-participants]').value}
+    ]
+          
+    socket.emit('bookingsInfo', info);
+    
+})
+
+socket.on('bookingsInfo',(info)=>{
+    reservationBookingsForm.style.display = 'none';
+    let div = document.createElement('div');
+    div.innerHTML = ` <div class="reviewInfo">
+    <label for="">Name</label>
+    <input type="text" value="${info[0].first_name } ${info[0].last_name}">
+</div>
+
+<div class="reviewInfo">
+    <label for="">Email</label>
+    <input type="text" value="${info[0].email}">
+</div>
+
+<div class="reviewInfo">
+    <label for="">Program</label>
+    <input type="text" value="${info[0].program}">
+</div>
+
+<div class="reviewInfo">
+    <label for="">Date</label>
+    <input type="text" value="${info[0].date}">
+</div>
+
+<div class="reviewInfo">
+    <label for="">Participants</label>
+    <input type="text" value="${info[0].participants}">
+</div> `
+    dataReviewForm.appendChild(div) 
+    dataCheckoutReview.style.display = 'block'
+})
+
+goBack.addEventListener('click',()=>{
+    dataCheckoutReview.style.display = 'none'
+    reservationBookingsForm.style.display = 'block'
+    dataReviewForm.innerHTML = ''
 })

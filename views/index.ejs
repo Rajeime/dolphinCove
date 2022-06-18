@@ -4,13 +4,12 @@
 <%-include('./partials/navBar') %>
 <body>
     <div class="main-section" data-main-section>
-
         <div class="home visible" data-option-select><%-include('./main-sections/home') %></div> 
         <div class="programs" data-option-select><%-include('./main-sections/programs') %></div>
         <div class="login" data-option-select><%-include('./main-sections/login') %></div> 
-
     </div>
 
 </body>
+<script src="/socket.io/socket.io.js"></script>
 <script src="/script.js"></script>
 </html>

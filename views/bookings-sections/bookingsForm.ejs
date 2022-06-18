@@ -1,0 +1,47 @@
+
+<span class="close" data-close>&times;</span>
+    <form action="" method="" data-booking-form>
+        <div class="reservation-head">
+            <h4>Make Reservation</h4>
+        </div>
+         
+        <div class="reservation-content">
+            
+            <div class="rows">
+                <div class="reservation-field">
+                    <input type="text" name="first_name" placeholder="First Name" data-first_name>
+                </div>
+    
+                <div class="reservation-field">
+                    <input type="text" name="last_name" placeholder="Last Name" data-last_name>
+                </div>
+            </div>
+            
+            <div class="rows">
+                <div class="reservation-field">
+                    <input type="email" name="email" id="" placeholder="Email" data-email>
+                </div>
+
+                <div class="reservation-field">
+                    <select name="program" id="" data-program>
+                        <option value="">Choose the activity</option>
+                        <% programs.forEach((program)=>{%>
+                        <option value="<%=program.programs%>"><%=program.programs%></option>
+                        <%})%>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rows">
+                <div class="reservation-field">
+                    <input type="date" name="date" id="" placeholder="Date" data-date>
+                </div>
+
+                <div class="reservation-field">
+                    <input type="number" name="participants" id="" data-participants placeholder="Participants" data-participants>
+                </div>
+            </div>
+            
+                <button type="submit" data-book-button class="bookNow">Book Now</button>
+        </div>
+    </form>

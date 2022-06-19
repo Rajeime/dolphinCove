@@ -3,10 +3,11 @@
     <%-include('./partials/head') %>
 <body>
     <div class="admin-sidebar">
-        <a href="#"><img src="../images/logo.png" alt="" style="width:100%"></a>
-        <a href="bookings" data-option class="">Bookings</a>
-        <a href="createBookings" data-option class="">Create Bookings</a>
-        <a href="addTour" data-option class="">Tour-Guides</a>
+        <li class="admin-logo"><img src="../images/logo.png" alt="" style="width:100%"></li>
+        <a href="#" class="bookings active" data-admin-link >Home</a>
+        <a href="#" class="bookings" data-admin-link >Bookings</a>
+        <a href="#" class="createBookings" data-admin-link >Create Bookings</a>
+        <!-- <a href="#" class="addTour" data-admin-link >Tour-Guides</a> -->
       </div>
 
  <div class="admin-main">
@@ -17,20 +18,13 @@
         </div>
 
         <div class="admin-main-section" data-main-section>
-            <div class="addTourGuide">
-                <form action="/addTourGuide" method="post">
-                    <input type="text" name="user_id" value="1" class="tourGuideUser">
-                    <input type="text" name="name" placeholder="name">
-                    <input type="text" name="email" placeholder="email">
-                    <input type="text" name="password" placeholder="password">
-                    <input type="text" name="confirmPassword" placeholder="confirm Password">
-                    <input type="text" name="address" id="" placeholder="address">
-                    <input type="text" name="telephone" id="" placeholder="telephone">
-                    <button type="submit">submit</button>
-                </form>
-            </div>
-            <%-include('./admin-sections/tourGuides')%>
+
+            <div class="home visible" data-admin-section><%-include('./admin-sections/home') %></div> 
+            <div class="adminTourGuide" data-admin-section><%-include('./admin-sections/tourGuides')%></div>
+            <div class="tourGuideSignUp" data-admin-section><%-include('./admin-sections/tourGuideSignUp') %></div>
+
         </div>
  </div>
 </body>
+<script src="/adminscript.js"></script>
 </html>

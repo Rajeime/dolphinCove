@@ -47,11 +47,10 @@ app.use('/auth', auth);
 app.use('/addTourGuide',signUp);
 app.use('/bookings',bookingsPage);
 
-
 //socket.io
 io.on('connection', (socket)=>{
     socket.on('bookingsInfo',(info)=>{
-       socket.emit('bookingsInfo' , info)
+       socket.emit('bookingsInfo',info)
     })
 })
 

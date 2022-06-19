@@ -1,4 +1,5 @@
 //javascript code for navigation system
+//variables
 let dataLinks = Array.from(document.querySelectorAll('[data-links]'));
 let options = Array.from(document.querySelectorAll('[data-option-select]'));
 
@@ -31,6 +32,7 @@ dataLinks.forEach((element,index)=>{
 
 
 // login page
+//variables
 var loginPasswordIcon = document.querySelector('[data-see-password]');
 var loginInput = document.querySelector('[data-login-password]');
 var value = false;
@@ -68,9 +70,6 @@ bookingsButton.addEventListener('click',()=>{
 })
 
 
-// Get the <span> element that closes the modal
-
-
 // When the user clicks on <span> (x), close the modal
 span.addEventListener('click',()=>{
   modal.style.display = "none";
@@ -96,12 +95,13 @@ participants.addEventListener('change',(e)=>{
 //socket.io codes
 let socket = io()
 
+//variables
 let bookingsForm = document.querySelector('[data-booking-form]');
 let reservationBookingsForm = document.querySelector('[data-reservation-bookings-form]');
 let goBack = document.querySelector('[data-go-back]');
 let programItem = document.querySelectorAll('[data-program-item]');
 let dataReviewForm = document.querySelector('[data-review-form]'); 
-let dataCheckoutReview = document.querySelector('[data-checkout-review]')
+let dataCheckoutReview = document.querySelector('[data-checkout-review]');
 
 bookingsForm.addEventListener('submit',(e)=>{
     e.preventDefault()
@@ -124,30 +124,31 @@ bookingsForm.addEventListener('submit',(e)=>{
 socket.on('bookingsInfo',(info)=>{
     reservationBookingsForm.style.display = 'none';
     let div = document.createElement('div');
-    div.innerHTML = ` <div class="reviewInfo">
-    <label for="">Name</label>
-    <input type="text" value="${info[0].first_name } ${info[0].last_name}">
-</div>
+    div.innerHTML = 
+    `<div class="reviewInfo">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="${info[0].first_name } ${info[0].last_name}">
+    </div>
 
-<div class="reviewInfo">
-    <label for="">Email</label>
-    <input type="text" value="${info[0].email}">
-</div>
+    <div class="reviewInfo">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="${info[0].email}">
+    </div>
 
-<div class="reviewInfo">
-    <label for="">Program</label>
-    <input type="text" value="${info[0].program}">
-</div>
+    <div class="reviewInfo">
+        <label for="program">Program</label>
+        <input type="text" name="program" value="${info[0].program}">
+    </div>
 
-<div class="reviewInfo">
-    <label for="">Date</label>
-    <input type="text" value="${info[0].date}">
-</div>
+    <div class="reviewInfo">
+        <label for="date">Date</label>
+        <input type="text" name="date" value="${info[0].date}">
+    </div>
 
-<div class="reviewInfo">
-    <label for="">Participants</label>
-    <input type="text" value="${info[0].participants}">
-</div> `
+    <div class="reviewInfo">
+        <label for="participants">Participants</label>
+        <input type="text" name="participants" value="${info[0].participants}">
+    </div> `
     dataReviewForm.appendChild(div) 
     dataCheckoutReview.style.display = 'block'
 })
@@ -157,3 +158,5 @@ goBack.addEventListener('click',()=>{
     reservationBookingsForm.style.display = 'block'
     dataReviewForm.innerHTML = ''
 })
+
+

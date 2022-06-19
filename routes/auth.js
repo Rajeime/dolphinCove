@@ -67,27 +67,6 @@ router.post('/login/tourGuide',(req,res)=>{
 })
 
 
-router.post('/addTourGuide',(req,res)=>{
-    let{name, email ,password, telephone, address} = req.body;
-    let user_id = parseInt(req.body.user_id);
-
-    // (async function hashedPassword(){
-    //     hashedPassword = await bcrypt.hash(password, 8)
-    // })()
-    
-    let sql = 'INSERT INTO tour_guide SET ?';
-  
-    db.query(sql,{user_id:user_id, name:name,email:email, password:password, telephone:telephone, address:address},(err,result)=>{
-        if(err){
-            console.log('error')
-        }
-
-        else{
-            // console.log(hashedPassword)
-            res.render('adminPage')
-        }
-    })
-})
 
 
 

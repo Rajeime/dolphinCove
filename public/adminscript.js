@@ -29,3 +29,15 @@ adminSectionLink.forEach((element,index)=>{
     })
 
 })
+
+
+//admin tour guides section
+
+let tourDropdown = document.querySelector('[data-show-tour]');
+let dropDown = document.querySelectorAll('[data-tour-dropdown]');
+
+tourDropdown.addEventListener('click',()=>{
+    dropDown.forEach((element)=>{
+        element.classList.toggle('showTour')
+    })
+})

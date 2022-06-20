@@ -1,12 +1,44 @@
 <div class="addTourGuide">
     <form action="/addTourGuide" method="post">
         <input type="text" name="user_id" value="1" class="tourGuideUser">
-        <input type="text" name="name" placeholder="name">
-        <input type="text" name="email" placeholder="email">
-        <input type="text" name="password" placeholder="password">
-        <input type="text" name="confirmPassword" placeholder="confirm Password">
-        <input type="text" name="address" id="" placeholder="address">
-        <input type="text" name="telephone" id="" placeholder="telephone">
+
+        <div class="tourRow">
+            <div class="tourSignUp">
+                <label for="">Name</label>
+                <input type="text" name="name" placeholder="name">
+            </div>
+    
+            <div class="tourSignUp">
+                <label for="">Email</label>
+                <input type="text" name="email" placeholder="email">
+            </div>
+        </div>
+        
+        <div class="tourRow">
+            <div class="tourSignUp">
+                <label for="">Password</label>
+                <input type="text" name="password" placeholder="password">
+            </div>
+    
+            <div class="tourSignUp">
+                <label for="">Confirm Password</label>
+                <input type="text" name="confirmPassword" placeholder="confirm Password">
+            </div>
+        </div>
+
+        <div class="tourRow">
+            <div class="tourSignUp">
+                <label for="">Address</label>
+                <input type="text" name="address" id="" placeholder="address">
+            </div>
+             
+            <div class="tourSignUp">
+                <label for="">Telephone</label>
+                <input type="text" name="telephone" id="" placeholder="telephone">
+            </div>
+        </div>
+        
+       
         <button type="submit">submit</button>
     </form>
 </div>

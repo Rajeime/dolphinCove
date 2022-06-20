@@ -47,6 +47,17 @@ app.use('/auth', auth);
 app.use('/addTourGuide',signUp);
 app.use('/bookings',bookingsPage);
 
+
+//remove tourGuide
+app.get('delete/:userId',(req,res)=> {
+    const userId = req.params.userId
+    let sql = 'DELETE FROM dolphincove.`tour_guide` WHERE id = ?'
+    db.query(sql,[userId] ,(err, result) =>{
+        if (err) throw err
+        res.render('adminPage')
+    })
+})
+
 //socket.io
 io.on('connection', (socket)=>{
     socket.on('bookingsInfo',(info)=>{

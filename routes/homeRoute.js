@@ -13,13 +13,5 @@ router.get('/',(req,res)=>{
     
 })
 
-//remove tourGuide
-router.get('delete/:userId',(req,res)=> {
-    const userId = req.params.userId
-    let sql = 'DELETE FROM dolphincove.`tour_guide` WHERE id = ?'
-    db.query(sql,[userId] ,(err, result) =>{
-        if (err) throw err
-        res.render('adminPage')
-    })
-})
+
 module.exports = router

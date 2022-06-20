@@ -212,7 +212,7 @@
     color: white;
     display: block;
     font-family: Arial,sans-serif;
-    font-weight: lighter;
+    font-weight: 400;
   }
 
 .admin-sidebar .active{
@@ -264,7 +264,7 @@
     text-decoration: none;
 }
 .admin-main h2{
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     font-weight: 100;
 }
@@ -455,6 +455,7 @@
     line-height: 1.25rem; 
     text-align: left; 
     width: 100%; 
+    border-collapse: collapse;
 }
 
 .admin-main-section .table-head{
@@ -470,9 +471,14 @@
     text-align: center;
 }
 
+.admin-main-section .table td{
+    padding: 4px;
+}
+
 .admin-main-section .table .row{
     background-color: #ffffff; 
-    border-bottom-width: 1px; 
+    border-bottom: 2px solid rgb(242, 242, 242);
+    
 }
 
 .admin-main-section .table td{
@@ -671,6 +677,40 @@
     border-bottom: 1px solid rgb(218, 218, 218);
     margin: 0 .8em;
 }
+
+/* tour company sign up in admin section */
+
+.admin-main-section .addTourGuide .tourRow{
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-main-section .addTourGuide .tourRow .tourSignUp{
+    flex-basis: 49%;
+}
+
+.admin-main-section .addTourGuide .tourSignUp{
+    margin: 4px 0px;
+}
+
+.admin-main-section .addTourGuide .tourSignUp input{
+    width: 100%;
+    height: 30px;
+}
+
+.admin-main-section .addTourGuide button{
+    color: white;
+    padding: .4rem .6rem;
+    border: none;
+    background-color: rgb(1, 81, 1);
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+
+
+
 /* media queries */
 /* meadia query for hamburger menus */
 @media only screen and (max-width: 650px) {

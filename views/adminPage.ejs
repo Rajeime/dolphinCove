@@ -3,11 +3,15 @@
     <%-include('./partials/head') %>
 <body>
     <div class="admin-sidebar">
-        <li class="admin-logo"><img src="../images/logo.png" alt="" style="width:100%"></li>
-        <a href="#" class="bookings active" data-admin-link >Home</a>
-        <a href="#" class="bookings" data-admin-link >Bookings</a>
-        <a href="#" class="createBookings" data-admin-link >Create Bookings</a>
-        <!-- <a href="#" class="addTour" data-admin-link >Tour-Guides</a> -->
+        <a class="admin-logo"><img src="/images/logo2.png" alt="" style="width:100%"></a>
+        <a href="#" class="adminHome active" data-admin-link >Home</a>
+        <a href="#" class="adminTour" data-admin-link >Tour Guides
+            <a href="">Show</a>
+            <a href="">Sign Up</a>
+        </a>
+        <a href="#" class="adminBookings" data-admin-link >Bookings</a>
+        <a href="#" class="adminTourSignUp" data-admin-link >Sign Up</a>
+      
       </div>
 
  <div class="admin-main">
@@ -21,6 +25,7 @@
 
             <div class="home visible" data-admin-section><%-include('./admin-sections/home') %></div> 
             <div class="adminTourGuide" data-admin-section><%-include('./admin-sections/tourGuides')%></div>
+            <div class="adminTourGuide" data-admin-section><%-include('./admin-sections/bookings')%></div>
             <div class="tourGuideSignUp" data-admin-section><%-include('./admin-sections/tourGuideSignUp') %></div>
 
         </div>

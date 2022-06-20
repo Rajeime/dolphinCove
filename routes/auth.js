@@ -14,12 +14,12 @@ router.post('/login/admin',(req,res)=>{
     let {email ,password} = req.body;
     let sql = 'SELECT * FROM dolphincove.admin WHERE email = ? and BINARY password = ?';
 
-    db.query(sql,[email,password],(err, results)=>{
+    db.query(sql,[email,password],(err, adminResults)=>{
         if(err){
             console.log('err')
         }
 
-        if(results.length > 0){
+        if(adminResults.length > 0){
           db.query('SELECT * FROM dolphincove.tour_guide' , (err,results)=>{
             if(err){
                 console.log('err')
@@ -28,7 +28,7 @@ router.post('/login/admin',(req,res)=>{
             else{
                 // sessionFunction(email);
                 // console.log(req.session.email)
-                res.render('adminPage',{tourGuides:results})
+                res.render('adminPage',{tourGuides:results, adminInfo: adminResults})
             }
           })
         
@@ -65,8 +65,6 @@ router.post('/login/tourGuide',(req,res)=>{
   
     })
 })
-
-
 
 
 

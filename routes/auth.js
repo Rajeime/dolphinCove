@@ -28,6 +28,7 @@ router.post('/login/admin',(req,res)=>{
             else{
                 // sessionFunction(email);
                 // console.log(req.session.email)
+                console.log(adminResults)
                 res.render('adminPage',{tourGuides:results, adminInfo: adminResults})
             }
           })

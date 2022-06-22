@@ -1,27 +1,11 @@
 
-<table class=" table">
-    <thead class="table-head">
-        <tr class="row">
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Telephone</th>
-            <th scope="col">Address</th>
-            <th scope="col">Mode of Action</th>
-        </tr>
-    </thead>
-    
-       <% tourGuides.forEach((tourGuide)=>{%>
-        <tr class="row">  
-                  
-            <td><%= tourGuide.name %></td>
-            <td><%= tourGuide.email %></td>
-            <td><%= tourGuide.telephone %></td>
-            <td><%= tourGuide.address %></td>
-        
-            <td>
-                    <a href="edit/<%= tourGuide.id %>" class="edit">update</a>
-                    <a href="/delete/<%= tourGuide.id %>" class="delete">remove</a>
-            </td>
-        </tr>
-        <% })%>
-</table>
+<div class="adminTourcontent">
+    <div class="adminView drop showContent" data-admin-tour><%-include('./tourGuide/viewTour') %></div> 
+    <div class="adminTourSignUp drop" data-admin-tour><%-include('./tourGuide/tourSignUp')%></div>
+</div>
+
+
+
+
+
+

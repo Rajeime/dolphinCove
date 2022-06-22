@@ -225,16 +225,34 @@
     background-color: rgb(22, 46, 101);
   }
 
+  /* .admin-sidebar .adminTour{
+    transition: all .3s linear 0s;
+  } */
+
 .admin-sidebar .tourDropdown{
     font-size: 16px;
     color: rgb(244, 242, 242);
     padding-left: 30px;
     display: none;
+    /* background-color: rgb(1, 5, 37); */
+}
+
+.admin-sidebar .tourActive{
+    background-color: rgb(3, 12, 78);
+}
+
+.adminTourcontent .drop{
+    display: none;
+}
+
+.adminTourcontent  .showContent{
+    display: block;
 }
 
 .admin-sidebar .showTour{
     display: block;
 }
+
   
 .admin-main {
     margin-left: 180px; /* Same as the width of the sidenav */

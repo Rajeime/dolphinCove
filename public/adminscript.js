@@ -35,9 +35,39 @@ adminSectionLink.forEach((element,index)=>{
 
 let tourDropdown = document.querySelector('[data-show-tour]');
 let dropDown = document.querySelectorAll('[data-tour-dropdown]');
+let adminTourContent = document.querySelectorAll('[data-admin-tour]')
 
-tourDropdown.addEventListener('click',()=>{
+tourDropdown.addEventListener('click',(e)=>{
     dropDown.forEach((element)=>{
-        element.classList.toggle('showTour')
+        element.classList.toggle('showTour');
     })
+
+    // if(e.target.classList[1] == 'active'){
+        navigateFunction()
+    // }
 })
+
+//change link function
+function navigateFunction(){
+    dropDown.forEach((element,index)=>{
+        element.addEventListener('click',(e)=>{
+            dropDown.forEach((element)=>{
+                element.classList.remove('tourActive')
+            })
+
+
+        for(let i = 0 ; i < adminTourContent.length; i++){
+            adminTourContent[i].classList.remove('showContent')
+        }
+
+            e.target.classList.add('tourActive')
+            navIndex = index
+
+            adminTourContent.forEach((element,index)=>{
+                if(navIndex == index){
+                    element.classList.add('showContent')
+                }   
+            })
+        })
+    })
+}
